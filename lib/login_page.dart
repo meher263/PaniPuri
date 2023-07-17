@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.white,iconTheme: IconThemeData(color: Colors.orange),),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
