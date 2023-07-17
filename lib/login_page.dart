@@ -1,98 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:your_app_name/signup_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  static const routeName = '/login';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Back",
-            style: TextStyle(
-              color: Color(0xfff27d28),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Back",
+          style: TextStyle(
+            color: Color(0xfff27d28),
           ),
-          backgroundColor: Colors.white,
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Welcome Back!",
-                    style: TextStyle(
-                      color: Color(0xfff27d28),
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
+        backgroundColor: Colors.white,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Welcome Back!",
+                  style: TextStyle(
+                    color: Color(0xfff27d28),
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 20),
+                LoginForm(),
+                SizedBox(
+                  height: 40,
+                ),
+                const Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                  height: 1,
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "or login with",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/google_icon.svg',
+                      width: 24,
+                      height: 24,
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  LoginForm(),
-                  SizedBox(
-                    height:
-                    40, // Increase the gap between the button and the line
-                  ),
-                  const Divider(
-                    color: Colors.grey,
-                    thickness: 1,
-                    height: 1,
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    "or login with",
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height:
-                    10, // Add a small gap below the "or login with" text
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/google_icon.svg',
-                        width: 24,
-                        height: 24,
-                      ),
-                      SizedBox(width: 20),
-                      Icon(Icons.facebook),
-                      SizedBox(width: 20),
-                      Icon(Icons.apple),
-                    ],
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      // Implement signup functionality
-                    },
-                    child: Text.rich(
-                      TextSpan(
-                        text: "Don't have an account? ",
-                        children: [
-                          TextSpan(
-                            text: "Signup",
-                            style: TextStyle(
-                              color: Color(0xfff27d28),
-                            ),
+                    SizedBox(width: 20),
+                    Icon(Icons.facebook),
+                    SizedBox(width: 20),
+                    Icon(Icons.apple),
+                  ],
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, SignupPage.routeName);
+                  },
+                  child: Text.rich(
+                    TextSpan(
+                      text: "Don't have an account? ",
+                      children: [
+                        TextSpan(
+                          text: "Signup",
+                          style: TextStyle(
+                            color: Color(0xfff27d28),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
