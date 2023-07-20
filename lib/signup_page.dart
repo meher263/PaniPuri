@@ -9,7 +9,10 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white,iconTheme: IconThemeData(color: Colors.orange),),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.orange),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -34,7 +37,7 @@ class _MyFormState extends State<MyForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -207,9 +210,12 @@ class _MyFormState extends State<MyForm> {
               ),
             ),
             style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
               backgroundColor: Color(0xfff27d28),
-              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
               minimumSize: Size(318, 46),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
           ),
           SizedBox(height: 20),
