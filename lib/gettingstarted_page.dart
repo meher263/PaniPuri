@@ -22,7 +22,7 @@ class GettingStartedPage extends StatelessWidget {
                       color: Color(0xfff27d28),
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Comic Sans MS',
+                      fontFamily: 'ComicNeue',
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -31,24 +31,23 @@ class GettingStartedPage extends StatelessWidget {
             ),
             Image.asset(
               'assets/golgappa.png',
-              height: 500,
-              width: 500,
             ),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   "-Just One More...",
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontStyle: FontStyle.italic,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'ComicNeue',
                   ),
                   textAlign: TextAlign.right,
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, LoginPage.routeName);

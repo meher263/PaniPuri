@@ -9,10 +9,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.0.0
   email_validator: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:  # Add the fonts section
+    - family: ComicNeue
+      fonts:
+        - asset: assets/fonts/ComicNeue/Comicneue-bold.ttf # Replace with the actual font file path
