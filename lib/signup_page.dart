@@ -212,7 +212,7 @@ class _MyFormState extends State<MyForm> {
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
               backgroundColor: Color(0xfff27d28),
-              minimumSize: Size(318, 46),
+              minimumSize: Size(320, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),

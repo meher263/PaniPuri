@@ -20,7 +20,7 @@ class GettingStartedPage extends StatelessWidget {
                     "Pappa's",
                     style: TextStyle(
                       color: Color(0xfff27d28),
-                      fontSize: 40,
+                      fontSize: 60,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'ComicNeue',
                     ),
@@ -32,7 +32,7 @@ class GettingStartedPage extends StatelessWidget {
             Image.asset(
               'assets/golgappa.png',
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -47,16 +47,16 @@ class GettingStartedPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, LoginPage.routeName);
               },
-              child: Text('Get Started'),
+              child: Text('Get Started',style: TextStyle(fontSize: 25,),),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Color(0xfff27d28),
-                minimumSize: Size(318, 46),
+                minimumSize: Size(320, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
