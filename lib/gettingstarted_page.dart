@@ -7,15 +7,12 @@ class GettingStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Getting Started'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              'https://example.com/panipuri_image.jpg', // Replace this with the actual URL of the Panipuri image
+            Image.asset(
+              'assets/golgappa.png', // Use the asset image path
               height: 200,
               width: 200,
             ),
