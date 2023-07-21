@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:your_app_name/signup_page.dart';
+import 'package:your_app_name/chat_page.dart'; // Import the ChatPage
 
 class LoginPage extends StatelessWidget {
   static const routeName = '/login';
@@ -8,7 +9,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white,iconTheme: IconThemeData(color: Colors.orange),),
+      appBar: AppBar(backgroundColor: Colors.white, iconTheme: IconThemeData(color: Colors.orange),),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -205,6 +206,9 @@ class _LoginFormState extends State<LoginForm> {
 
                 print('Email: $email');
                 print('Password: $password');
+
+                // Navigate to the ChatPage after successful login
+                Navigator.pushNamed(context, ChatPage.routeName); // Updated this line
               }
             },
             child: Text(
@@ -222,6 +226,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
+
         ],
       ),
     );

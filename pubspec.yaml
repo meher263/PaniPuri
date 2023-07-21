@@ -2,7 +2,7 @@ name: your_app_name
 description: A new Flutter project.
 version: 1.0.0+1
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -21,4 +21,4 @@ flutter:
   fonts:  # Add the fonts section
     - family: ComicNeue
       fonts:
-        - asset: assets/fonts/ComicNeue/Comicneue-bold.ttf # Replace with the actual font file path
+        - asset: assets/fonts/ComicNeue/Comicneue-bold.ttf
