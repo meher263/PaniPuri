@@ -11,92 +11,307 @@ class ChatPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Stack(
-        children: [
-          TopPlacedContainer(),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              width: 165,
-              height: 197.037,
-              child: Padding(
-                padding: EdgeInsets.only(left: 23.0),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(138, 55, 55, 0.7490196078431373),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TopPlacedContainer(),
+            Container(
+              // items,
+              padding: EdgeInsets.all(5),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5), // Add outer padding of 5
+                    child: Row(
+                      children: [
+                        Text('Items', textAlign: TextAlign.left),
+                      ],
                     ),
                   ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 6.64,
-                        left: 4.48,
-                        right: 2.54,
-                        bottom: 67.47,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                            color: Colors.red,
-                            // Customize the color as needed
-                            // You can adjust the width, height, and content of this inner container
-                            // based on your requirements.
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                      Positioned(
-                        bottom: 48, // Adjust the bottom position as needed
-                        left: 0,
-                        right: 35,
-                        child: Center(
-                          child: Text(
-                            'Samosa Chat',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.normal,
-                            ),
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                      Center(
-                        child: Text(
-                          'Center Left',
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ElevatedContainer(
+                          // Main Container
+                          width: 150, // Changed to 150
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    25), // Add rounded corners to the image
+                                child: Image.asset(
+                                  'assets/Special 1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: MediaQuery.of(context).size.height *
+                                      1 /
+                                      6,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Special 1',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    Text(
+                                      '₹40',
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+            // Add more rows as needed...
+          ],
+        ),
       ),
     );
   }
 }
 
-
 class TopPlacedContainer extends StatelessWidget {
-  const TopPlacedContainer({super.key});
+  const TopPlacedContainer({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double containerHeight =
+        screenHeight * 0.37; // You can adjust the scaling factor as needed
+    double bottomBorderRadius =
+        containerHeight * 0.13; // You can adjust the scaling factor as needed
+
     return Container(
       width: double.infinity,
-      height: 304,
+      height: containerHeight,
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
           topRight: Radius.circular(0),
-          bottomLeft: Radius.circular(40.0),
-          bottomRight: Radius.circular(40.0),
+          bottomLeft: Radius.circular(bottomBorderRadius),
+          bottomRight: Radius.circular(bottomBorderRadius),
         ),
         border: Border.all(
           color: Colors.black,
@@ -110,6 +325,44 @@ class TopPlacedContainer extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 50),
         ),
       ),
+    );
+  }
+}
+
+class ElevatedContainer extends StatelessWidget {
+  final Widget child;
+  final double width;
+  final EdgeInsetsGeometry padding;
+
+  const ElevatedContainer({
+    required this.child,
+    this.width = 150,
+    this.padding = const EdgeInsets.all(5),
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      padding: padding,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.25), // 25% opacity
+            blurRadius: 2,
+            offset: Offset(0, 5),
+          ),
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.25), // 25% opacity
+            blurRadius: 2,
+            offset: Offset(0, 5),
+          ),
+        ],
+      ),
+      child: child,
     );
   }
 }
