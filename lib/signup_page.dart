@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:your_app_name/login_page.dart';
+import 'package:your_app_name/login_page.dart'; // Import the LoginPage
+import 'package:your_app_name/home_page.dart'; // Import the HomePage
 
 class SignupPage extends StatelessWidget {
   static const routeName = '/signup';
@@ -37,7 +38,7 @@ class _MyFormState extends State<MyForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -47,6 +48,7 @@ class _MyFormState extends State<MyForm> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
           Text(
             "Let's Get Started",
             style: TextStyle(
@@ -195,12 +197,17 @@ class _MyFormState extends State<MyForm> {
                 String confirmPassword = _confirmPasswordController.text;
 
                 // Add your signup logic here
+                // For demonstration purposes, assume signup is successful
+                // You should replace this with your actual signup logic
 
                 print('First Name: $firstName');
                 print('Last Name: $lastName');
                 print('Email: $email');
                 print('Password: $password');
                 print('Confirm Password: $confirmPassword');
+
+                // If signup is successful, navigate to MyHomePage
+                Navigator.pushNamed(context, MyHomePage.routeName);
               }
             },
             child: Text(
