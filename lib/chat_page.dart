@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
     _isFavoriteList = List.generate(itemCount, (_) => false);
     _controllerList = List.generate(
       itemCount,
-          (_) => AnimationController(
+      (_) => AnimationController(
         vsync: this,
         duration: Duration(milliseconds: 300),
       ),
@@ -104,7 +105,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                 Container(
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Special 1',
@@ -118,29 +119,50 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    _toggleFavorite(0);
-                                  },
-                                  child: ScaleTransition(
-                                    scale: Tween(begin: 0.7, end: 1.0)
-                                        .animate(
-                                      CurvedAnimation(
-                                        parent: _controllerList[0],
-                                        curve: Curves.easeOut,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              _toggleFavorite(0);
+                                            },
+                                            child: ScaleTransition(
+                                              scale: Tween(begin: 0.7, end: 1.0).animate(
+                                                CurvedAnimation(
+                                                  parent: _controllerList[0],
+                                                  curve: Curves.easeOut,
+                                                ),
+                                              ),
+                                              child: _isFavoriteList[0]
+                                                  ? const Icon(
+                                                      Icons.favorite,
+                                                      size: 30,
+                                                      color: Colors.red,
+                                                    )
+                                                  : const Icon(
+                                                      Icons.favorite_border,
+                                                      size: 30,
+                                                    ),
+                                            ),
+                                          ),
+                                          Text("Wishlist"),
+                                        ],
                                       ),
                                     ),
-                                    child: _isFavoriteList[0]
-                                        ? const Icon(
-                                      Icons.favorite,
-                                      size: 30,
-                                      color: Colors.red,
-                                    )
-                                        : const Icon(
-                                      Icons.favorite_border,
-                                      size: 30,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.orange,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.shopping_cart),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -166,7 +188,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                   padding: EdgeInsets.symmetric(horizontal: 10),
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Special 1',
@@ -180,29 +202,51 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    _toggleFavorite(1);
-                                  },
-                                  child: ScaleTransition(
-                                    scale: Tween(begin: 0.7, end: 1.0)
-                                        .animate(
-                                      CurvedAnimation(
-                                        parent: _controllerList[1],
-                                        curve: Curves.easeOut,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              _toggleFavorite(1);
+                                            },
+                                            child: ScaleTransition(
+                                              scale: Tween(begin: 0.7, end: 1.0)
+                                                  .animate(
+                                                CurvedAnimation(
+                                                  parent: _controllerList[1],
+                                                  curve: Curves.easeOut,
+                                                ),
+                                              ),
+                                              child: _isFavoriteList[1]
+                                                  ? const Icon(
+                                                      Icons.favorite,
+                                                      size: 30,
+                                                      color: Colors.red,
+                                                    )
+                                                  : const Icon(
+                                                      Icons.favorite_border,
+                                                      size: 30,
+                                                    ),
+                                            ),
+                                          ),
+                                          Text("wishlist"),
+                                        ],
                                       ),
                                     ),
-                                    child: _isFavoriteList[1]
-                                        ? const Icon(
-                                      Icons.favorite,
-                                      size: 30,
-                                      color: Colors.red,
-                                    )
-                                        : const Icon(
-                                      Icons.favorite_border,
-                                      size: 30,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.orange,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.shopping_cart),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -236,7 +280,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                   padding: EdgeInsets.symmetric(horizontal: 10),
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Special 1',
@@ -250,35 +294,58 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    _toggleFavorite(2);
-                                  },
-                                  child: ScaleTransition(
-                                    scale: Tween(begin: 0.7, end: 1.0)
-                                        .animate(
-                                      CurvedAnimation(
-                                        parent: _controllerList[2],
-                                        curve: Curves.easeOut,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              _toggleFavorite(2);
+                                            },
+                                            child: ScaleTransition(
+                                              scale: Tween(begin: 0.7, end: 1.0)
+                                                  .animate(
+                                                CurvedAnimation(
+                                                  parent: _controllerList[2],
+                                                  curve: Curves.easeOut,
+                                                ),
+                                              ),
+                                              child: _isFavoriteList[2]
+                                                  ? const Icon(
+                                                      Icons.favorite,
+                                                      size: 30,
+                                                      color: Colors.red,
+                                                    )
+                                                  : const Icon(
+                                                      Icons.favorite_border,
+                                                      size: 30,
+                                                    ),
+                                            ),
+                                          ),
+                                          Text("wishlist"),
+                                        ],
                                       ),
                                     ),
-                                    child: _isFavoriteList[2]
-                                        ? const Icon(
-                                      Icons.favorite,
-                                      size: 30,
-                                      color: Colors.red,
-                                    )
-                                        : const Icon(
-                                      Icons.favorite_border,
-                                      size: 30,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.orange,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.shopping_cart),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
                           ),
                           ElevatedContainer(
-                            // Main Container
+                            // Main Container 4
                             width: 185,
                             height: 200,
                             padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
@@ -298,7 +365,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                   padding: EdgeInsets.symmetric(horizontal: 10),
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Special 1',
@@ -312,29 +379,52 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    _toggleFavorite(3);
-                                  },
-                                  child: ScaleTransition(
-                                    scale: Tween(begin: 0.7, end: 1.0)
-                                        .animate(
-                                      CurvedAnimation(
-                                        parent: _controllerList[3],
-                                        curve: Curves.easeOut,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              _toggleFavorite(3);
+                                            },
+                                            child: ScaleTransition(
+                                              scale: Tween(begin: 0.7, end: 1.0)
+                                                  .animate(
+                                                CurvedAnimation(
+                                                  parent: _controllerList[3],
+                                                  curve: Curves.easeOut,
+                                                ),
+                                              ),
+                                              child: _isFavoriteList[3]
+                                                  ? const Icon(
+                                                      Icons.favorite,
+                                                      size: 30,
+                                                      color: Colors.red,
+                                                    )
+                                                  : const Icon(
+                                                      Icons.favorite_border,
+                                                      size: 30,
+                                                    ),
+                                            ),
+                                          ),
+                                          Text("Wishlist"),
+                                        ],
                                       ),
                                     ),
-                                    child: _isFavoriteList[3]
-                                        ? const Icon(
-                                      Icons.favorite,
-                                      size: 30,
-                                      color: Colors.red,
-                                    )
-                                        : const Icon(
-                                      Icons.favorite_border,
-                                      size: 30,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.orange,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.shopping_cart),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -365,29 +455,57 @@ class TopPlacedContainer extends StatelessWidget {
     double bottomBorderRadius =
         containerHeight * 0.13; // You can adjust the scaling factor as needed
 
-    return Container(
-      width: double.infinity,
-      height: containerHeight,
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(0),
-          topRight: Radius.circular(0),
-          bottomLeft: Radius.circular(bottomBorderRadius),
-          bottomRight: Radius.circular(bottomBorderRadius),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(0),
+            topRight: Radius.circular(0),
+            bottomLeft: Radius.circular(bottomBorderRadius),
+            bottomRight: Radius.circular(bottomBorderRadius),
+          ),
+          child: Image.asset(
+            'assets/specials.jpg',
+            width: double.infinity,
+            height: containerHeight,
+            fit: BoxFit.cover,
+          ),
         ),
-        border: Border.all(
-          color: Colors.black,
-          width: 2.0,
-          style: BorderStyle.solid,
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 2.5, sigmaY: 2.5),
+          child: Container(
+            width: double.infinity,
+            height: containerHeight,
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+            ),
+          ),
         ),
-      ),
-      child: const Center(
-        child: Text(
-          'special',
-          style: TextStyle(color: Colors.white, fontSize: 50),
+        Container(
+          width: double.infinity,
+          height: containerHeight,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(0),
+              topRight: Radius.circular(0),
+              bottomLeft: Radius.circular(bottomBorderRadius),
+              bottomRight: Radius.circular(bottomBorderRadius),
+            ),
+            border: Border.all(
+              color: Colors.black,
+              width: 2.0,
+              style: BorderStyle.solid,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              'special',
+              style: TextStyle(color: Colors.white, fontSize: 50),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
